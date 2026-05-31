@@ -97,16 +97,15 @@ export default function QuizClient({ quizName, questions }: QuizClientProps) {
 
         <div className="grid w-full gap-4 sm:grid-cols-2">
           {currentQuestion.answers.map((answer) => {
-            const isSelected = selectedAnswerId === answer.id;
             const shouldShowResult = selectedAnswerId !== null;
 
             let borderClass = "border-gray-300 hover:border-gray-500";
 
-            if (shouldShowResult && isSelected && answer.correct) {
+            if (shouldShowResult && answer.correct) {
               borderClass = "border-green-500 bg-green-50";
             }
 
-            if (shouldShowResult && isSelected && !answer.correct) {
+            if (shouldShowResult && !answer.correct) {
               borderClass = "border-red-500 bg-red-50";
             }
 
